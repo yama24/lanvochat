@@ -1,0 +1,20 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "lanvochat",
+  "outputfilename": "lanvochat",
+  "frontend:install": "yarn install",
+  "frontend:build": "yarn build",
+  "frontend:dev:watcher": "yarn dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "yama24",
+    "email": "yama@example.com"
+  },
+  "info": {
+    "companyName": "LanvoChat",
+    "productName": "LanvoChat",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright © 2025",
+    "comments": "P2P LAN Chat Application"
+  }
+}
