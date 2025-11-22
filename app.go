@@ -87,8 +87,25 @@ func (a *App) SaveMessage(peerID, senderID, content string) error {
 }
 
 // GetMessageHistory retrieves message history for a peer
-func (a *App) GetMessageHistory(peerID string, limit int) ([]database.Message, error) {
-	return a.db.GetMessageHistory(peerID, limit)
+func (a *App) GetMessageHistory(peerID string, limit int) ([]map[string]interface{}, error) {
+	messages, err := a.db.GetMessageHistory(peerID, limit)
+	if err != nil {
+		return nil, err
+	}
+
+	var result []map[string]interface{}
+	for _, msg := range messages {
+		result = append(result, map[string]interface{}{
+			"id":        msg.ID,
+			"peer_id":   msg.PeerID,
+			"sender_id": msg.SenderID,
+			"content":   msg.Content,
+			"timestamp": msg.Timestamp.Format(time.RFC3339),
+			"is_read":   msg.IsRead,
+		})
+	}
+
+	return result, nil
 }
 
 // SavePeer saves a peer to the database
@@ -140,7 +157,7 @@ func (a *App) GetActivePeers() map[string]interface{} {
 			"name":      v.Name,
 			"ip":        v.IP,
 			"port":      v.Port,
-			"last_seen": v.LastSeen,
+			"last_seen": v.LastSeen.Format(time.RFC3339),
 			"is_online": v.IsOnline,
 		}
 	}

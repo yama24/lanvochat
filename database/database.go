@@ -19,7 +19,7 @@ type Message struct {
 	PeerID    string    `json:"peer_id"`
 	SenderID  string    `json:"sender_id"`
 	Content   string    `json:"content"`
-	Timestamp time.Time `json:"timestamp"`
+	Timestamp time.Time `json:"timestamp,omitempty"`
 	IsRead    bool      `json:"is_read"`
 }
 

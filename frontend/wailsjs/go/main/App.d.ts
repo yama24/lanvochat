@@ -8,7 +8,7 @@ export function GetActivePeers():Promise<Record<string, any>>;
 
 export function GetLocalPeerInfo():Promise<Record<string, string>>;
 
-export function GetMessageHistory(arg1:string,arg2:number):Promise<Array<database.Message>>;
+export function GetMessageHistory(arg1:string,arg2:number):Promise<Array<Record<string, any>>>;
 
 export function GetPeers():Promise<Array<database.Peer>>;
 
