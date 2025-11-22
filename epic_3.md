@@ -4,6 +4,12 @@
 
 **PRINSIP UTAMA:** Cantik & Modern (React/TS) dan *Frameless Window*.
 
+| Stack Kunci | Versi/Spesifikasi |
+| :--- | :--- |
+| **Go Backend** | Go 1.25.3 |
+| **Frontend** | React/TypeScript |
+| **JS Package Manager** | Yarn (Node.js 22.21.0) |
+
 **Task Rinci:**
 1.  **Frontend Setup & Styling:** Setup *styling* (misalnya Tailwind CSS) dan buat komponen React dasar yang modern.
 2.  **Peer List Component:** Buat komponen React yang mendengarkan Wails Events dari UDP untuk menampilkan dan memperbarui daftar *peer online*.

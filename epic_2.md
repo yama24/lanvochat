@@ -4,10 +4,16 @@
 
 **PRINSIP UTAMA:** Efisiensi Jaringan (UDP Multicast) dan Keandalan (TCP).
 
+| Stack Kunci | Versi/Spesifikasi |
+| :--- | :--- |
+| **Go Backend** | Go 1.25.3 |
+| **Frontend** | React/TypeScript |
+| **Jaringan** | UDP Multicast & TCP |
+
 **Task Rinci:**
 1.  **Peer Discovery (UDP Multicast):** Buat **goroutine** Go untuk mengirim dan menerima paket "I'm Alive" melalui **UDP Multicast** untuk mendeteksi peers di LAN.
-2.  **TCP Listening Handler:** Buat *goroutine* Go untuk memulai *listening socket* **TCP** dan *handler* untuk membaca pesan JSON masuk. Pesan yang diterima harus diteruskan ke fungsi `SaveMessage` dari Epik 1.
+2.  **TCP Listening Handler:** Buat *goroutine* Go untuk memulai *listening socket* **TCP** dan *handler* untuk membaca pesan JSON masuk. Pesan yang diterima harus diteruskan ke fungsi `SaveMessage`.
 3.  **Message Sending Function (TCP Client):** Buat fungsi Go (`SendMessageToPeer(ip, message)`) yang membuka koneksi TCP keluar, mengirimkan *payload* pesan JSON, dan menutup koneksi.
-4.  **Wails Event Bridge:** Gunakan `wails.Runtime.EventsEmit()` di Go *backend* untuk mengirim *event* (`messageReceived`) ke *frontend* setelah pesan baru diterima.
+4.  **Wails Event Bridge:** Gunakan `wails.Runtime.EventsEmit()` di Go *backend* untuk mengirim *event* (`messageReceived`) ke *frontend*.
 
 Berikan kerangka kode Go untuk modul UDP Multicast dan fungsi TCP *listening* utama.

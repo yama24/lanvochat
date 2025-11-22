@@ -1,8 +1,14 @@
-### EPIC 5: TESTING & FINALIZATION
+### INSTRUKSIN: EPIC 5 - TESTING & FINALIZATION
 
 **Fokus Task:** Pengujian, validasi keandalan, dan persiapan *deployment*.
 
 **PRINSIP UTAMA:** Keandalan (Testing) dan Keringanan (Final Build).
+
+| Stack Kunci | Versi/Spesifikasi |
+| :--- | :--- |
+| **Go Backend** | Go 1.25.3 |
+| **Deployment** | Wails CLI (`wails build`) |
+| **Testing** | Go standard testing framework |
 
 **Task Rinci:**
 1.  **Unit Testing:** Tulis *unit test* Go yang berfokus pada modul **SQLite** dan fungsi **TCP Message Handling** untuk menjamin integritas data.
